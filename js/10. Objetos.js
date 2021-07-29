@@ -14,7 +14,6 @@ const producto = {
     disponible : true
 }
 
-console.log(producto);
 /*
 //Como acceder
 console.log(producto.nombreProducto);
@@ -25,3 +24,12 @@ console.log(producto["precio"]); //también se puede acceder así
 */
 
 //Como modificar objetos
+
+//agregar
+producto.imagen = 'imagen.jpg';
+
+console.log(producto);
+
+//eliminar propiedades
+delete producto.disponible;
+console.log(producto);
