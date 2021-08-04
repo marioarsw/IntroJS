@@ -1,4 +1,5 @@
 //Arrow function
+//Los arrow functions tienen que comenzar con una declaración de una variable o constante
 
 const sumar = (n1, n2) => console.log(n1 + n2); //Funciona en una linea para instrucciones cortas
 sumar(15,15);
@@ -30,50 +31,33 @@ const carrito = [
 ]
 
 //forEach - ver si algo existe en un arreglo
-meses.forEach(function(mes) {
-    // console.log(mes);
+meses.forEach( mes => {
     if(mes=='Marzo'){
         console.log('Marzo si existe');
     }  
 });
 
-//En vez de usar lo de arriba se puede utilizar includes
-const resultado = meses.includes('Diciembre');
 
-// const resultado2 = carrito.includes('Tablet'); para arreglos no se puede utilizar includes, se utiliza some
+//Código de 15 en arrow func
+let resultado;
+resultado = carrito.some( producto => producto.nombre == 'Celular'); //El return también se elimina
 
-console.log(resultado);
 
-//Some ideal para arreglo de objetos
-let resultado2;
 
-//Manera normal
-// resultado2 = carrito.some(function(producto) {
-//     return producto.nombre == 'Celular';
-// })
 
-//Utilizando arrow functions para simplificar
-resultado2 = carrito.some(producto => producto.nombre == 'Celular');
-
-console.log(resultado2);
 
 //REDUCE Para tomar todos los valores y poder sumarlos, sintaxis:
-resultado3 = carrito.reduce(function(total, producto) {
-    return total + producto.precio;
-}, 0) //Valor inicial de total
+let resultado1;
+resultado1 = carrito.reduce( (total, producto) => total + producto.precio, 0); //Valor inicial de total
 
-resultado4 = carrito.reduce((total, producto) => total + producto.precio, 0);
 
-console.log(resultado4);
 
-resultado5 = carrito.filter(function(producto) {
-    return producto.precio >= 400;
-})
 
-console.log(resultado5);
 
-resultado5 = carrito.filter(function(producto) {
-    return producto.nombre != 'Celular';
-})
+resultado2 = carrito.filter(producto => producto.precio >= 400 );
 
-console.log(resultado5);
+
+
+resultado3 = carrito.filter( producto => producto.nombre != 'Celular' );
+
+console.log(resultado3);
